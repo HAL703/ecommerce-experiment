@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/ecommerce-experiment.Server.props" />
+</Project>

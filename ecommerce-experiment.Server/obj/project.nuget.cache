@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "XTXCbn4JgwX9Ss6rFs6hGKzWDTpzXw/j8Akmpi/byP44un2iKaP2JsB9POOgq/mDf7cfsUE2tjCWVyl6Gl/eSg==",
+  "success": true,
+  "projectFilePath": "/home/zetademon/Downloads/ecommerce-experiment/ecommerce-experiment.Server/ecommerce-experiment.Server.csproj",
+  "expectedPackageFiles": [
+    "/home/zetademon/.nuget/packages/microsoft.aspnetcore.spaproxy/8.0.0/microsoft.aspnetcore.spaproxy.8.0.0.nupkg.sha512",
+    "/home/zetademon/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.0/microsoft.aspnetcore.app.ref.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
