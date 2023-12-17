@@ -2,8 +2,8 @@
 "SpaProxyServer": {
 "ServerUrl": "https://localhost:5173",
 "RedirectUrl": "",
-"LaunchCommand": "npm run dev",
-"WorkingDirectory": "/home/zetademon/Downloads/ecommerce/ecommerce-experiment.Server/../ecommerce-experiment.client",
+"LaunchCommand": "pnpm run dev",
+"WorkingDirectory": "/home/zetademon/Documents/SE/ecommerce/ecommerce-experiment.Server/../ecommerce-experiment.client",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }
