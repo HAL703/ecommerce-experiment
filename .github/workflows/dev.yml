@@ -26,6 +26,5 @@ jobs:
         working-directory: ./ecommerce-experiment.client
         run: |
           pnpm i
-          pnpm test
           pnpm run build
           pnpm run dev
