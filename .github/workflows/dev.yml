@@ -9,14 +9,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with: 
+      - uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
           node-version: 18
-      - name: npm install & test
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
+      - name: pnpm dep install & test
         working-directory: ./ecommerce-experiment.client
         run: |
-          npm ci
-          npm test
-          npm run build
-          npm run dev
+          pnpm ci
+          pnpm test
+          pnpm run build
+          pnpm run dev
