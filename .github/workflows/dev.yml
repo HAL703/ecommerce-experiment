@@ -25,7 +25,7 @@ jobs:
       - name: pnpm dep install & test
         working-directory: ./ecommerce-experiment.client
         run: |
-          pnpm ci
+          pnpm i
           pnpm test
           pnpm run build
           pnpm run dev
