@@ -13,8 +13,10 @@ jobs:
       - uses: actions/setup-node@v1
         with: 
           node-version: 18
+      - name: npm install & test
         working-directory: ./ecommerce-experiment.client
-      - run: npm ci
-      - run: npm test
-      - run: npm run build
-      - run: npm run dev
+        run: |
+          npm ci
+          npm test
+          npm run build
+          npm run dev
