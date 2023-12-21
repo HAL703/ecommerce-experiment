@@ -27,4 +27,3 @@ jobs:
         run: |
           pnpm i
           pnpm run build
-          pnpm run dev
