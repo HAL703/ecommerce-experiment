@@ -41,9 +41,9 @@ jobs:
       - uses: diillson/auto-pull-request@v1.0.1
         with:
           source_branch: ${{ github.ref }} 
-          target_branch: 'main'
+          destination_branch: 'main'
           github_token: ${{ github.token }}
-          pr_title: '[Automated] Pulling {source_branch} into target {target_branch}'
+          pr_title: '[Automated] Pulling ${{source_branch}} into target ${{target_branch}}'
           pr_body: |
             *Only succeeds if all tests and the build were successful*
     
