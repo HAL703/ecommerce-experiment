@@ -38,8 +38,7 @@ jobs:
         with:
           github_token: ${{ github.token }}
           source_ref: ${{ github.ref }}
-          target_branch: 'master'
-          run: echo {github.ref}
+          target_branch: 'main'
           commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
     
 
