@@ -37,12 +37,13 @@ jobs:
       contents: write
     if: needs.build.result == 'success'
     steps:
-      - uses: actions/checkout@v2
-      - uses: everlytic/branch-merge@1.1.2
+      - uses: actions/checkout@v3
+      - uses: diillson/auto-pull-request@v1.0.1
         with:
-          github_token: ${{ github.token }}
-          source_ref: ${{ github.ref }}
+          source_branch: ${{ github.ref }} 
           target_branch: 'main'
-          commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
+          github_token: ${{ github.token }}
+          pr_title: '[Automated] Pulling {source_branch} into target {target_branch}'
+          pr_body: |
+            *Only succeeds if all tests and the build were successful*
     
-
