@@ -3,7 +3,7 @@ name: push on dev
 on:
   push:
     branches:
-      - dev
+      - 'dev'
 
 jobs:
   build:
@@ -43,7 +43,7 @@ jobs:
           source_branch: ${{ github.ref }} 
           destination_branch: 'main'
           github_token: ${{ github.token }}
-          pr_title: '[Automated] Pulling ${{ github.ref == 'refs/heads/dev' && 'dev' || 'error' }} into main'
+          pr_title: '[Automated] Pulling ${{ github.ref }} into main'
           pr_body: |
             **Only succeeds if all tests and the build were successful**
     
