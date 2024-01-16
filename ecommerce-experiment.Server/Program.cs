@@ -1,6 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using ecommerce_experiment.Server;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var a = builder.Services.AddDbContext<UserContext>(options => 
+    options.UseNpgsql(builder.Configuration.GetConnectionString("ecommerce")));
 
 builder.Services.AddControllers();
 
