@@ -59,7 +59,7 @@ public class UserController(UserContext userContext) : ControllerBase
         {
             return NotFound();
         }
-
+ 
         _userContext.Users.Remove(user);
         _userContext.SaveChanges();
         return NoContent();
