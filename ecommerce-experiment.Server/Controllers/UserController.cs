@@ -28,7 +28,7 @@ public class UserController(UserContext userContext) : ControllerBase
         }
         return user;
     }
-
+ 
     [HttpPost]
     public ActionResult<User> CreateUser([FromBody] User user)
     {
