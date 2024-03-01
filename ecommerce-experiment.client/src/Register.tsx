@@ -1,5 +1,5 @@
 //import React, { useEffect, useState, } from 'react';
-import { useImmer, useImmerReducer } from 'use-immer';
+import { useImmer } from 'use-immer';
 import User from './Interfaces/User.ts'
 
 function RegisterUser () {

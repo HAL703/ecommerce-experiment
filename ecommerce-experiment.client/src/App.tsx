@@ -3,7 +3,7 @@ import {lazy, Suspense} from 'react';
 import './App.css';
 import { ErrorBoundary } from "react-error-boundary";
 const Register = lazy(() => import("./Register.tsx"));
-const UserList = lazy(() => import('./UserList.tsx'));
+//const UserList = lazy(() => import('./UserList.tsx'));
 
 function App() {
     // function MyErrorBoundaryFallback({ errorMessage, errorStatus }: ErrorBoundary) {
@@ -37,7 +37,7 @@ function App() {
                 <p>This component demonstrates fetching data from the server.</p>
                 <ErrorBoundary fallback={<div>error</div>}>
                     <Suspense fallback={<div>Loading users...</div>}>
-                        <UserList />
+                        {/*<UserList />*/}
                     </Suspense>
                     <Suspense fallback={<div>Loading registration...</div>}>
                         <Register />
