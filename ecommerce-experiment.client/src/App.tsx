@@ -1,56 +1,51 @@
-import { useEffect, useState } from 'react';
+"use client";
+import {lazy, Suspense} from 'react';
 import './App.css';
-
-interface Forecast {
-    date: string;
-    temperatureC: number;
-    temperatureF: number;
-    summary: string;
-}
+import { ErrorBoundary } from "react-error-boundary";
+const Register = lazy(() => import("./Register.tsx"));
+//const UserList = lazy(() => import('./UserList.tsx'));
 
 function App() {
-    const [forecasts, setForecasts] = useState<Forecast[]>();
+    // function MyErrorBoundaryFallback({ errorMessage, errorStatus }: ErrorBoundary) {
+    //     return (
+    //         <div className="container">
+    //             <h1>Error</h1>
+    //             <div className="row">
+    //                 Error Status: <b>{errorStatus}</b>
+    //             </div>
+    //             <div className="row">
+    //                 ErrorMessage: <b>{errorMessage}</b>
+    //             </div>
+    //         </div>
+    //     );
+    // }
 
-    useEffect(() => {
-        populateWeatherData();
-    }, []);
-
-    const contents = forecasts === undefined
-        ? <p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationreact">https://aka.ms/jspsintegrationreact</a> for more details.</em></p>
-        : <table className="table table-striped" aria-labelledby="tabelLabel">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Temp. (C)</th>
-                    <th>Temp. (F)</th>
-                    <th>Summary</th>
-                </tr>
-            </thead>
-            <tbody>
-                {forecasts.map(forecast =>
-                    <tr key={forecast.date}>
-                        <td>{forecast.date}</td>
-                        <td>{forecast.temperatureC}</td>
-                        <td>{forecast.temperatureF}</td>
-                        <td>{forecast.summary}</td>
-                    </tr>
-                )}
-            </tbody>
-        </table>;
-
+    // function fallbackRender({ error, resetErrorBoundary }) {
+    //     // Call resetErrorBoundary() to reset the error boundary and retry the render.
+    //
+    //     return (
+    //         <div role="alert">
+    //             <p>Something went wrong:</p>
+    //             <pre style={{ color: "red" }}>{error.message}</pre>
+    //         </div>
+    //     );
+    // }
     return (
-        <div>
-            <h1 id="tabelLabel">Weather forecast</h1>
-            <p>This component demonstrates fetching data from the server.</p>
-            {contents}
-        </div>
+        <>
+            <div>
+                <h1 id="tableLabel">User List</h1>
+                <p>This component demonstrates fetching data from the server.</p>
+                <ErrorBoundary fallback={<div>error</div>}>
+                    <Suspense fallback={<div>Loading users...</div>}>
+                        {/*<UserList />*/}
+                    </Suspense>
+                    <Suspense fallback={<div>Loading registration...</div>}>
+                        <Register />
+                    </Suspense>
+                </ErrorBoundary>
+            </div>
+        </>
     );
-
-    async function populateWeatherData() {
-        const response = await fetch('weatherforecast');
-        const data = await response.json();
-        setForecasts(data);
-    }
 }
 
 export default App;

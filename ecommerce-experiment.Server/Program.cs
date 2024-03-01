@@ -3,8 +3,8 @@ using ecommerce_experiment.Server;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-var a = builder.Services.AddDbContext<UserContext>(options => 
+builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<UserContext>(options => 
     options.UseNpgsql(builder.Configuration.GetConnectionString("ecommerce")));
 
 builder.Services.AddControllers();
