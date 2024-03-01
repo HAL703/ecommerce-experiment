@@ -2,8 +2,8 @@
 import {lazy, Suspense} from 'react';
 import './App.css';
 import { ErrorBoundary } from "react-error-boundary";
-const Register = lazy(() => import("./Register.tsx");
-const UserList = lazy(() => import('./UserList.tsx'))
+const Register = lazy(() => import("./Register.tsx"));
+const UserList = lazy(() => import('./UserList.tsx'));
 
 function App() {
     // function MyErrorBoundaryFallback({ errorMessage, errorStatus }: ErrorBoundary) {
