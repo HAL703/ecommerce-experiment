@@ -1,20 +1,20 @@
-import {useEffect, useState, } from 'react';
-import User from './Interfaces/User.ts'
+//import {useEffect, useState, } from 'react';
+//import User from './Interfaces/User.ts'
 
 function UserList() {
-    const [users, setUsers] = useState<User[]>([]);
-    async function getUsers(): Promise<User[]> {
-        const response = await fetch('user');
-        return response.json();
-    }
-    
-    useEffect(() => {
-
-        getUsers().then((resp) => {
-            return setUsers(resp);
-        })
-        //throw new Error('oopsy doopsy');
-    }, []);
+    // const [users, setUsers] = useState<User[]>([]);
+    // async function getUsers(): Promise<User[]> {
+    //     const response = await fetch('user');
+    //     return response.json();
+    // }
+    //
+    // useEffect(() => {
+    //
+    //     getUsers().then((resp) => {
+    //         return setUsers(resp);
+    //     })
+    //     //throw new Error('oopsy doopsy');
+    // }, []);
     return (
         <></>
         // <div>
